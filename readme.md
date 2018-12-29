@@ -118,5 +118,16 @@ subprojects {
 }
 ```
 
+If you want a call a Kotlin Class for main function procedure than you can create something like this (`@JvmStatic` required)
+```kotlin
+object Starter {
+    
+    @JvmStatic
+    fun main(args: Array<String>) {
+        println("hello")
+    }
+}
+```
+
 ## Working with InteliJ
 Use import function of InteliJ with Gradle Option.
