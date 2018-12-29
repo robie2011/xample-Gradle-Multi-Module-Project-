@@ -139,13 +139,12 @@ The following code extends the main build.gradle file with a task called `execut
 
 ```gradle
 task execute(type:JavaExec) {
-    // this is a workaround because in intelij this variable couldn't be found during build
-    if (mainClass != null){
-        main = mainClass
-        // gettin dynamically all runtimeClasspath
-        // https://discuss.gradle.org/t/how-to-aggregate-subproject-jars-distributions-in-a-root-project-with-base-plugin-only/9798
-        classpath = files(subprojects.collect { it. sourceSets.main.runtimeClasspath })
-    }
+    // https://discuss.gradle.org/t/passing-gradle-project-properties-via-command-line-to-gradlerunner/19280
+    main = findProperty("mainClass")
+    
+    // getting dynamically all runtimeClasspath
+    // https://discuss.gradle.org/t/how-to-aggregate-subproject-jars-distributions-in-a-root-project-with-base-plugin-only/9798
+    classpath = files(subprojects.collect { it. sourceSets.main.runtimeClasspath })
 }
 ```
 
