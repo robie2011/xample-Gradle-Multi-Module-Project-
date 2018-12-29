@@ -139,14 +139,18 @@ The following code extends the main build.gradle file with a task called `execut
 
 ```gradle
 task execute(type:JavaExec) {
-    main = mainClass
-
-    // gettin dynamically all runtimeClasspath
-    // https://discuss.gradle.org/t/how-to-aggregate-subproject-jars-distributions-in-a-root-project-with-base-plugin-only/9798
-    classpath = files(subprojects.collect { it. sourceSets.main.runtimeClasspath })
+    // this is a workaround because in intelij this variable couldn't be found during build
+    if (mainClass != null){
+        main = mainClass
+        // gettin dynamically all runtimeClasspath
+        // https://discuss.gradle.org/t/how-to-aggregate-subproject-jars-distributions-in-a-root-project-with-base-plugin-only/9798
+        classpath = files(subprojects.collect { it. sourceSets.main.runtimeClasspath })
+    }
 }
 ```
 
+Note: With InteliJ it wasn't possible to build the project because `mainClass` wasn't defined (this variable should be created only if we call the task). Workaround: using null check
+
 Now we can call our desired Main-Class like in this example
 
-	gradle -PmainClass=Secondary execute 
+	gradle -PmainClass=package.MainClassName execute 
