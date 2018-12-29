@@ -80,3 +80,26 @@ This examples requires installation of `gradle`. It is also possible to use the 
 | `gradle assemble` | build olny                                  |
 | `gradle distZip`  | build, create start scripts and pack to zip |
 
+## Adding kotlin
+https://kotlinlang.org/docs/reference/using-gradle.html
+
+Adding to main `build.gradle`
+```gradle
+buildscript {
+    ext.kotlin_version = '1.3.11'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+subprojects {
+    // ...
+    apply plugin: 'kotlin'
+}
+```
+
