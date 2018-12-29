@@ -1,0 +1,16 @@
+apply plugin: 'application'
+
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'Starter'
+    }
+}
+
+dependencies {
+    compile project(':core')
+}
+
+
+// required for application plugin
+mainClassName = 'Starter'
