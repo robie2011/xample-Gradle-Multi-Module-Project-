@@ -131,3 +131,22 @@ object Starter {
 
 ## Working with InteliJ
 Use import function of InteliJ with Gradle Option.
+
+## Choose Main-Class by passing gradle argument
+Main class for execution can be choosen by passing arguments to gradle.
+
+The following code extends the main build.gradle file with a task called `execute`
+
+```gradle
+task execute(type:JavaExec) {
+    main = mainClass
+
+    // gettin dynamically all runtimeClasspath
+    // https://discuss.gradle.org/t/how-to-aggregate-subproject-jars-distributions-in-a-root-project-with-base-plugin-only/9798
+    classpath = files(subprojects.collect { it. sourceSets.main.runtimeClasspath })
+}
+```
+
+Now we can call our desired Main-Class like in this example
+
+	gradle -PmainClass=Secondary execute 
