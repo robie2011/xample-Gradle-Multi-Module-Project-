@@ -13,7 +13,13 @@ First, create your directory structure.
 
 Example:
 
-	mkdir -p multiproject2/{module-a,module-b}/src/main/{java,kotlin,resources}
+	mkdir multiproject2
+	cd multiproject2
+	mkdir -p {module-a,module-b}/src/main/{java,kotlin,resources}
+	echo "include 'app'">>settings.gradle
+	echo "include 'core'">>settings.gradle
+	touch build.gradle
+	
 
 ## build.gradle
 Main build file. Contains top level definition.
