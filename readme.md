@@ -1,14 +1,16 @@
 # Example: Gradle Mutli Module Project
 This repository contains an example of gradle multi module project.
 
-Following instructions were used to generate this repository: https://www.petrikainulainen.net/programming/gradle/getting-started-with-gradle-creating-a-multi-project-build/
+Following instructions were used to generate this repository
 
-See also: https://docs.gradle.org/current/userguide/tutorial_java_projects.html#sec:examples
+  * https://www.petrikainulainen.net/programming/gradle/getting-started-with-gradle-creating-a-multi-project-build/
+  * https://www.petrikainulainen.net/programming/gradle/getting-started-with-gradle-our-first-java-project/
+  * https://docs.gradle.org/current/userguide/tutorial_java_projects.html#sec:examples
 
 
 ## Files
 
-## /build.gradle
+## build.gradle
 Main build file. Contains top level definition.
 
 Apply configurations for all subprojects:
@@ -31,7 +33,7 @@ project(':core') {
 }
 ```
 
-## /settings.gradle
+## settings.gradle
 Defines which subprojects/module should be included in the build
 
 ## Module Dependency Example
