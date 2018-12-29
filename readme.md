@@ -8,6 +8,13 @@ Following instructions were used to generate this repository
   * https://docs.gradle.org/current/userguide/tutorial_java_projects.html#sec:examples
 
 
+## Directory Structure
+First, create your directory structure.
+
+Example:
+
+	mkdir -p multiproject2/{module-a,module-b}/src/main/{java,kotlin,resources}
+
 ## build.gradle
 Main build file. Contains top level definition.
 
