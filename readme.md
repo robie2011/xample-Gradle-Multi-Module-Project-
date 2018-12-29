@@ -81,7 +81,7 @@ This examples requires installation of `gradle`. It is also possible to use the 
 | `gradle distZip`  | build, create start scripts and pack to zip |
 
 
-## Adding kotlin
+## Adding kotlin
 
 https://kotlinlang.org/docs/reference/using-gradle.html
 
