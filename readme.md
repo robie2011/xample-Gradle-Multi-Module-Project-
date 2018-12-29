@@ -148,7 +148,7 @@ task execute(type:JavaExec) {
 }
 ```
 
-Note: With InteliJ it wasn't possible to build the project because `mainClass` wasn't defined (this variable should be created only if we call the task). Workaround: using null check
+Note: With InteliJ it wasn't possible to build the project because `mainClass` wasn't defined (this variable should be created only if we call the task). Workaround: using findProperty() method
 
 Now we can call our desired Main-Class like in this example
 
