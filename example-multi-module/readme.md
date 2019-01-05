@@ -153,3 +153,12 @@ Note: With InteliJ it wasn't possible to build the project because `mainClass` w
 Now we can call our desired Main-Class like in this example
 
 	gradle -PmainClass=package.MainClassName execute 
+
+
+## gradle project tasks
+
+We can run tasks for specific project. Syntaxt is `gradle :projectname:taskname`
+
+Example:
+
+    gradle :app:distZip
