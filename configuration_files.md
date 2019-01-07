@@ -13,7 +13,7 @@ in classpaths JARs or Directories (see java classpath arguments).
 On generation of zip-file for distribution task by gradle, start scripts (linux/windows)
 for main application are created with required JARs in classpath.
 
-__Example Start-Script without required classpath__
+__Example Start-Script (excerpt)__
 
 ```bash
 # ...
