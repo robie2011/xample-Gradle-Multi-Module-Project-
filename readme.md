@@ -3,3 +3,4 @@ This projects contains example gradle / kotlin configurations for my personal us
 
 Additional Links
   * http://www.vogella.com/tutorials/Gradle/article.html
+  * https://docs.gradle.org/current/userguide/application_plugin.html
