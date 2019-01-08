@@ -1,0 +1,88 @@
+version: '3'
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:5.1.0
+    hostname: zookeeper
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    networks: 
+      - kafkanet
+  
+  kafka:
+    image: confluentinc/cp-kafka:5.1.0
+    hostname: kafka
+    container_name: kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9091:9091"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9091
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    networks: 
+      - kafkanet
+
+  schema-registry:
+    image: confluentinc/cp-schema-registry:5.1.0
+    hostname: schema-registry
+    container_name: schema-registry
+    depends_on:
+      - zookeeper
+      - kafka
+    ports:
+      - "8082:8082"
+    environment:
+      SCHEMA_REGISTRY_HOST_NAME: schema-registry
+      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: 'PLAINTEXT://kafka:9091'
+      SCHEMA_REGISTRY_MASTER_ELIGIBILITY: "false"
+      SCHEMA_REGISTRY_LISTENERS: "http://0.0.0.0:8082"
+      SCHEMA_REGISTRY_LOG4J_ROOT_LOGLEVEL: ERROR
+    networks: 
+      - kafkanet
+
+  kafka-rest:
+    image: confluentinc/cp-kafka-rest:5.1.0
+    hostname: kafka-rest
+    container_name: kafka-rest
+    depends_on:
+      - kafka
+      - schema-registry
+    environment:
+      KAFKA_REST_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_REST_LISTENERS: 'http://0.0.0.0:8082'
+      KAFKA_REST_SCHEMA_REGISTRY_URL: 'http://schema-registry:8081'
+      KAFKA_REST_HOST_NAME: 'kafka-rest'
+    networks: 
+      - kafkanet
+
+  kafka-topics-ui:
+    image: landoop/kafka-topics-ui:0.9.4
+    hostname: kafka-topics-ui
+    container_name: kafka-topic-ui
+    depends_on:
+      - kafka-rest
+    ports: 
+      - "8000:8000"
+    environment:
+      KAFKA_REST_PROXY_URL: 'http://kafka-rest:8082'
+      PROXY: 'true'
+    networks: 
+      - kafkanet
+
+  opcua-kafka-exporter:
+    image: registry.gitlab.com/rajakone-mse/kotlin-project7/opcua-kafka-exporter
+    hostname: opcua-kafka-exporter
+    container_name: opcua-kafka-exporter
+    depends_on:
+      - kafka
+    networks:
+      - kafkanet
+
+networks:
+  kafkanet:
+    external: true
