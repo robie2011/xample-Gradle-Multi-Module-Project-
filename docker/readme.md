@@ -1,6 +1,6 @@
 # Docker
 
-## Copy templates
+## Copy templates
 
 ```bash
 npm i -g dl-repo-dir
