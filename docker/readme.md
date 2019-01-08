@@ -1,5 +1,15 @@
 # Docker
 
+## Copy templates
+
+```bash
+npm i -g dl-repo-dir
+
+PROJECT=/path/to/newproject
+repo download robie2011/Dev-Examples 'docker/' $PROJECT
+rm $PROJECT/readme.md
+```
+
 ## Images
   * JRE: https://hub.docker.com/_/microsoft-java-jre
 
