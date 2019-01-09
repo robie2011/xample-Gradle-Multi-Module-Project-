@@ -10,8 +10,13 @@ mv filename.zip /tmp/
 mv filename.zip /tmp
 
 # renaming folder (moving)
-mv /path/old/foldername /path/new/foldername
+# ONLY WORKS, IF NEW FOLDER NOT EXISTS! OTHERWIESE oldFoldername will be a subdir of newFoldername
+mv /path/bkp1/oldFoldername /path/prod/newFoldername
 mv oldFoldername newFoldername
+
+# moving content of old folder to new folder
+mv /path/bkp1/* /path/prod/newFoldername
+mv oldFoldername/* newFoldername
 
 # moving folder f1 to parent directory /tmp/test001 (f1 will be subdir)
 mv f1/ /mnt/backups
