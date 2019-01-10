@@ -2,6 +2,21 @@
 
 ## Basics
 
+### Calling super-constructor
+
+
+```kotlin
+class AvgActivePowerStatsSerde : WrapperSerde<AvgActivePowerStats> {
+    constructor() : super(
+            JsonSerializer<AvgActivePowerStats>(),
+            JsonDeserializer<AvgActivePowerStats>() ) {
+        configure(mapOf("serializedClass" to AvgActivePowerStats::class.java), false)
+    }
+}
+```
+
+[see also](https://stackoverflow.com/questions/44481268/call-super-class-constructor-in-kotlin-super-is-not-an-expression)
+
 ### Referencing to methods
 ```kotlin
 Classname::methodname
