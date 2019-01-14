@@ -22,6 +22,29 @@ jar {
 }
 ```
 
+### Shaodw Jar
+The example above didn't worked all the time. Workaround: use [shaddow pluging](https://imperceptiblethoughts.com/shadow/getting-started/#default-java-groovy-tasks).
+
+```groovy
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.3'
+    }
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'java'
+
+// optional: for big file size
+shadowJar {
+    zip64 true
+}
+```
+
+Execute gradle task `gradle clean && gradle :spark-streams:shadowJar`
 
 ## Additional Links
   * http://www.vogella.com/tutorials/Gradle/article.html
