@@ -46,6 +46,23 @@ shadowJar {
 
 Execute gradle task `gradle clean && gradle :spark-streams:shadowJar`
 
-## Additional Links
+### Variables in Dependey List
+
+*Example*
+
+```groovy
+
+dependencies {
+    ext.sparkVersion = "2.11"
+    ext.artificatVersion = "2.3.1"
+
+    // https://spark.apache.org/docs/2.3.1/streaming-programming-guide.html#linking
+    compile "org.apache.spark:spark-streaming_$sparkVersion:$artificatVersion"
+    compile "org.apache.spark:spark-streaming-kafka-0-10_$sparkVersion:$artificatVersion"
+    compile "org.apache.spark:spark-sql_$sparkVersion:$artificatVersion"
+}
+```
+
+## Additional Links
   * http://www.vogella.com/tutorials/Gradle/article.html
   * https://docs.gradle.org/current/userguide/application_plugin.html
