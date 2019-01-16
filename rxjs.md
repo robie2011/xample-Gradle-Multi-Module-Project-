@@ -1,6 +1,5 @@
 # RxJs
-
-## Links
+## Links
 
   * [API](https://rxjs-dev.firebaseapp.com/api)
   * https://www.npmjs.com/package/rxjs
