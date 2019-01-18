@@ -67,6 +67,39 @@ sub.subscribe(
 
 [source](https://iamturns.com/continue-rxjs-streams-when-errors-occur/)
 
+## Convert Callback to Observable
+```typescript
+
+// 0 args
+function functionWith0ArgAndCallback(x, cb) {
+    cb('hello')
+}
+const bound0 = bindCallback(functionWith0ArgAndCallback)
+bound0(3).subscribe(console.log)
+
+// 1 args
+function functionWith1ArgAndCallback(x, cb) {
+    cb(x*2)
+}
+const bound1 = bindCallback(functionWith1ArgAndCallback)
+bound1(3).subscribe(console.log)
+
+// 2 args
+function functionWith2ArgAndCallback(x,y, cb) {
+  cb(x+y)
+}
+const bound2 = bindCallback(functionWith2ArgAndCallback)
+bound2(3,7).subscribe(console.log)
+
+// 3 args
+function functionWith3ArgAndCallback(x,y,z,cb) {
+  cb(x+y+z)
+}
+const bound3 = bindCallback(functionWith3ArgAndCallback)
+bound3(3,7,5).subscribe(console.log)
+
+```
+
 ## Migration to RxJs 6
 
 using pipes
