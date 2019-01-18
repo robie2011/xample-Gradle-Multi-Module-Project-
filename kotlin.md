@@ -2,9 +2,20 @@
 
 ## Basics
 
+### Private Constructor
+```kotlin
+class Foo private constructor(val someData: Data) {
+    companion object {
+        operator fun invoke(): Foo {
+            // do stuff
+
+            return Foo(someData)
+        }
+    }
+}
+```
+
 ### Calling super-constructor
-
-
 ```kotlin
 class AvgActivePowerStatsSerde : WrapperSerde<AvgActivePowerStats> {
     constructor() : super(

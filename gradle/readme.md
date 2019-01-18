@@ -46,7 +46,8 @@ shadowJar {
 
 Execute gradle task `gradle clean && gradle :spark-streams:shadowJar`
 
-### Variables in Dependey List
+### Dependencies
+#### Variables in Dependey List
 
 *Example*
 
@@ -62,6 +63,22 @@ dependencies {
     compile "org.apache.spark:spark-sql_$sparkVersion:$artificatVersion"
 }
 ```
+
+#### Other project / module
+```groovy
+dependencies {
+    compile project(':dataio')
+}
+```
+
+#### Libraries
+```groovy
+dependencies {
+    // lib-folder is located in root folder
+    compile fileTree(dir: 'libs', include: '*.jar')
+}
+```
+
 
 ## Additional Links
   * http://www.vogella.com/tutorials/Gradle/article.html

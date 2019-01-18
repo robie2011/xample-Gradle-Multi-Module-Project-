@@ -26,3 +26,9 @@ Add-Commit
     git push origin empty:master --force
 
 https://stackoverflow.com/questions/9763223/delete-github-repos-wiki
+
+## Diff
+### File version in two different branches
+```bash
+git diff mybranch master myfile.cs
+```
