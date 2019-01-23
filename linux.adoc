@@ -18,3 +18,22 @@
 
 |===
 
+## Tar
+Tape Archive 
+
+.switches: 
+  * t: list
+  * c: create archive
+  * x: extract
+
+.options
+  * v: verbose
+  * f: file (input/output)
+
+
+.Example 1: create package - **C**ompress **V**erbose **F**ilename
+    tar -cvf packagename.tar /folder1 /folder2
+
+.Example 2: lisT content: Compress Verbose Filename
+    tar -tvf packagename.tar /folder1 /folder2
+
