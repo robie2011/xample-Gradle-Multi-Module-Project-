@@ -8,7 +8,7 @@
 | how long is system online
 
 | `tar -cvf packagename.tar /folder1 /folder2`
-| create package: **C**ompress **V**erbose **F**ilename
+| create package: **C**reate **V**erbose **F**ilename
 
 
 | `tar -tvf packagename.tar /folder1 /folder2`
