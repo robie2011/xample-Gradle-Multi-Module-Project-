@@ -32,3 +32,9 @@ https://stackoverflow.com/questions/9763223/delete-github-repos-wiki
 ```bash
 git diff mybranch master myfile.cs
 ```
+
+## Gitlab.com
+Using Deploy Token: https://docs.gitlab.com/ee/user/project/deploy_tokens/
+
+    git clone http://<username>:<deploy_token>@gitlab.example.com/tanuki/awesome_project.git
+    docker login registry.example.com -u <username> -p <deploy_token>
