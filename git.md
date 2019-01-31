@@ -33,6 +33,11 @@ https://stackoverflow.com/questions/9763223/delete-github-repos-wiki
 git diff mybranch master myfile.cs
 ```
 
+## Cleaning
+ * To remove directories, run `git clean -fd`
+ * To remove ignored files, run `git clean -fX`
+ * To remove ignored and non-ignored files, run `git clean -fx
+
 ## Gitlab.com
 Using Deploy Token: https://docs.gitlab.com/ee/user/project/deploy_tokens/
 
