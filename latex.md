@@ -1,9 +1,10 @@
 # Latex
 
 ## Figures
-\def \mediumImageHeight {8cm}
 
 ```latex
+\def \mediumImageHeight {8cm}
+
 \begin{figure}[h]
     \centering
     \includegraphics[height=\mediumImageHeight]{filenameWithoutExtension}
