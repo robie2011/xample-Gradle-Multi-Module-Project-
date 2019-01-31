@@ -13,3 +13,5 @@
 \end{figure}
 
 ```
+  * https://en.wikibooks.org/wiki/LaTeX/Labels_and_Cross-referencing
+  * https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions
