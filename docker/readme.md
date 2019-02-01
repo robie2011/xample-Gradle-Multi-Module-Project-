@@ -10,6 +10,10 @@ repo download robie2011/Dev-Examples 'docker/' $PROJECT
 rm $PROJECT/readme.md
 ```
 
+## Working with different Buildsources
+ cd /build/source
+ docker build -f docker/Dockerfile -t your-image-name .
+
 ## Images
   * JRE: https://hub.docker.com/_/microsoft-java-jre
 
