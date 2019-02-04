@@ -88,6 +88,17 @@ fun invokeLambda(lambda: (Double) -> Boolean) : Boolean {
 }
 ```
 
+## Examples
+### Calculate execution duration and show it
+```kotlin
+// required lib: compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.8.1'
+val executionTimeMs = measureTimeMillis {
+    exporter.export(numericIds, dateFrom, dateTo, exportPath, "nest_")
+}
+
+
+println("Execution Time: " + DurationFormatUtils.formatDuration(executionTimeMs, "HH:mm:ss,SSS"))
+```
 
 ### Links
   * https://www.baeldung.com/kotlin-lambda-expressions
