@@ -88,7 +88,13 @@ fun invokeLambda(lambda: (Double) -> Boolean) : Boolean {
 }
 ```
 
-## Examples
+## DateTime
+## Basics
+There are (https://www.oracle.com/technetwork/articles/java/jf14-date-time-2125367.html)
+  * LocaleTime
+  * LocaleDate
+  * LocaleDateTime
+  * ZonedDateTime
 ### Calculate execution duration and show it
 ```kotlin
 // required lib: compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.8.1'
