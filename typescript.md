@@ -43,3 +43,46 @@ yarn add @types/node
     ]
 }
 ```
+
+## Edit JSON File
+```javascript
+const fs = require('fs');
+const pathModelfile = "./dashboard_model.json"
+const pathNewModelFile = "dashboard_new.json"
+const obj = JSON.parse(fs.readFileSync(pathModelfile, 'utf8'));
+const countFrequencyBand = 20
+const frequencyBandSize = 100
+const frequencyStart = 100
+
+const generateField = name => {
+  return [
+    {
+      "params": [
+        name
+      ],
+      "type": "field"
+    },
+    {
+      "params": [],
+      "type": "mean"
+    },
+    {
+      "params": [
+        name
+      ],
+      "type": "alias"
+    }
+  ]
+}
+
+function generateAllFields() {
+  let i = 0
+  return new Array(countFrequencyBand).fill(1).map(() => {
+    let freq = frequencyStart + frequencyBandSize * i++
+    return generateField(freq.toString())
+  })
+}
+
+obj.panels[0].targets[0].select = generateAllFields()
+fs.writeFileSync("dashboard_new.json", JSON.stringify(obj, null, 4), "utf8")
+```
