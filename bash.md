@@ -34,6 +34,21 @@ mv /path/original/accounting/ /mnt/backups/
 mv * /mnt/backups/
 ```
 
+## Path/Filename Operations
+```bash
+# get parent directory: /directory
+dirname /directory/filename.txt
+
+# get filename only: filename.txt
+basename /directory/filename.txt
+
+# get absolute path to file/directory
+realpath myfile.txt
+/workingdirectory/myfile.txt
+``
+
+[Get filename without extension](https://stackoverflow.com/a/965072/2248405)
+
 ## Templating
 ```bash
 #!/bin/sh
