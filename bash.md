@@ -45,7 +45,7 @@ basename /directory/filename.txt
 # get absolute path to file/directory
 realpath myfile.txt
 /workingdirectory/myfile.txt
-``
+```
 
 [Get filename without extension](https://stackoverflow.com/a/965072/2248405)
 
