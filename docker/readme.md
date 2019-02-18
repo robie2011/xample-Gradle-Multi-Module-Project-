@@ -37,7 +37,7 @@ fi
 
 # this forwards all cmds and arguments to exec command
 exec "$@"
-``
+```
 
 
 ## Links
