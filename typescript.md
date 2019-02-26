@@ -22,6 +22,7 @@ yarn add @types/node
 #npm i ts-node
 ```
 
+tsconfig.json
 ```json
 {
     "compilerOptions": {
