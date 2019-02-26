@@ -107,3 +107,4 @@ module.exports = {
 yarn add webpack webpack-cli
 npx webpack --config webpack.config.js
 ```
+https://webpack.js.org/guides/getting-started/
