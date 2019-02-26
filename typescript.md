@@ -1,6 +1,6 @@
 # TypeScript
 
-## Typed Dictioanry
+## Typed Dictionary
 ```typescript
 interface MetricByKey {
   [key: string]: Metric
@@ -86,4 +86,24 @@ function generateAllFields() {
 
 obj.panels[0].targets[0].select = generateAllFields()
 fs.writeFileSync("dashboard_new.json", JSON.stringify(obj, null, 4), "utf8")
+```
+
+## Using Webpack to pack typescript output
+
+```javascript
+// file: webpack.config.js
+const path = require('path');
+
+module.exports = {
+  entry: './dist/main.js',
+  output: {
+    filename: '../bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  }
+};
+```
+
+```bash
+yarn add webpack webpack-cli
+npx webpack --config webpack.config.js
 ```
