@@ -1,0 +1,16 @@
+{
+  "name": "example-typescript-webpack-project",
+  "version": "1.0.0",
+  "main": "build/main.js",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm build/* && rm dist/*",
+    "build": "yarn run clean && tsc && npx webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "rxjs": "^6.4.0",
+    "ts-node": "^8.0.2",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3"
+  }
+}
