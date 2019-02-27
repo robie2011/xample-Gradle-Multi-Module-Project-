@@ -1,7 +1,11 @@
-import { Observable } from "rxjs";
+require('file-loader?name=[name].[ext]!./index.html');
 
-const a = new Observable(subs => {
+import { Observable } from "rxjs";
+const a = new Observable<number>(subs => {
     setInterval(() => subs.next(Math.random()), 1000)
 })
 
-a.subscribe(console.log)
+const value = document.getElementById('value')
+a.subscribe(v => {
+    value.innerText = v.toString()
+})

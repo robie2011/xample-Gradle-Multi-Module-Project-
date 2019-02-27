@@ -5,12 +5,20 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm build/* && rm dist/*",
-    "build": "yarn run clean && tsc && npx webpack --config webpack.config.js"
+    "build": "tsc && npx webpack --config webpack.config.js",
+    "start:dev": "webpack-dev-server"
   },
   "dependencies": {
-    "rxjs": "^6.4.0",
+    "rxjs": "^6.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^11.9.5",
+    "file-loader": "^3.0.1",
+    "ts-loader": "^5.3.3",
     "ts-node": "^8.0.2",
+    "typescript": "^3.3.3333",
     "webpack": "^4.29.5",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
   }
 }
