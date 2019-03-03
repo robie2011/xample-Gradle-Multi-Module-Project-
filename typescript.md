@@ -108,3 +108,14 @@ yarn add webpack webpack-cli
 npx webpack --config webpack.config.js
 ```
 https://webpack.js.org/guides/getting-started/
+
+## Using Alias for Import Paths
+in `tsconfig.app.json`and `tsconfig.json` add to property `compilerOptions`  
+```json
+    "paths": {
+      "@app/*": ["app/*"],
+      "@common-ui/*": ["app/common-ui/*"]
+    },
+```
+
+https://github.com/angular/angular-cli/issues/10444#issuecomment-469038390
