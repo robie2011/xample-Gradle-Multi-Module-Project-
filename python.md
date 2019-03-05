@@ -11,3 +11,11 @@ ys = map(lambda y: y*2,
 ```
 
 https://stackoverflow.com/questions/1303347/getting-a-map-to-return-a-list-in-python-3-x
+
+
+## string interpolation
+
+```python
+name = 'Robert'
+print(f'Hello {name}')
+```
