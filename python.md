@@ -56,6 +56,37 @@ reduce(lambda x, y: x * y, integers)
 ```
 
 https://medium.com/@bonfirealgorithm/beyond-the-for-loop-higher-order-functions-and-list-comprehensions-in-python-695b58ab71d3
+d
+
+## Iterator functions
+
+*infinite:*
+  * count
+  * cycle
+  * repeat
+
+*terminating:*
+  * accumulate
+  * chain
+  * chain.from_iterable
+  * compress
+  * dropwhile
+  * filterfalse
+  * groupby
+  * islice
+  * starmap
+  * takewhile
+  * tee
+  * zip_longest
+  
+*combinatoric iterators:*
+  * product()
+  * permutations()
+  * combinations()
+  * combinations_with_replacement
+  
+https://docs.python.org/3/library/itertools.html?highlight=itertools
+
 
 ## string interpolation
 
