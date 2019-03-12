@@ -139,15 +139,12 @@ print(f'Hello {name}')
 ## number formatting
 
 python 2
-
-  print "%02d" % (1,)
+    print "%02d" % (1,)
 
 python 3.+
-
-  print("{:02d}".format(1))
+    print("{:02d}".format(1))
 
 python 3.6+
-
-  print(f"{1:02d}")
+    print(f"{1:02d}")
   
 https://stackoverflow.com/questions/134934/display-number-with-leading-zeros
