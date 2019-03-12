@@ -135,3 +135,16 @@ https://docs.python.org/3/library/itertools.html?highlight=itertools
 name = 'Robert'
 print(f'Hello {name}')
 ```
+
+## number formatting
+
+python 2
+  print "%02d" % (1,)
+
+python 3.+
+In Python 2 you can do:
+  print("{:02d}".format(1))
+python 3.6+
+  print(f"{1:02d}")
+  
+https://stackoverflow.com/questions/134934/display-number-with-leading-zeros
