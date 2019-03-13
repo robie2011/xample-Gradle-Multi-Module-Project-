@@ -151,3 +151,22 @@ python 3.6+
     print(f"{1:02d}")
   
 https://stackoverflow.com/questions/134934/display-number-with-leading-zeros
+
+## dictionary
+### iteration
+
+    for key in d:
+
+will simply loop over the keys in the dictionary, rather than the keys and values. 
+
+To loop over both key and value you can use the following:
+
+For Python 2.x:
+
+    for key, value in d.iteritems():
+
+For Python 3.x:
+
+    for key, value in d.items():
+
+https://stackoverflow.com/a/3294899/2248405
