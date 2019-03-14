@@ -174,3 +174,7 @@ https://stackoverflow.com/a/3294899/2248405
 Note: 
 `dict.items()` returns `dict_tiems` of 2-Tuple and can be converte to list. 
 The first item of tuple is the key and second one the value.
+
+
+## Links
+  * Pandas, https://pandas.pydata.org/pandas-docs/stable/
