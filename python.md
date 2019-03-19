@@ -175,6 +175,19 @@ Note:
 `dict.items()` returns `dict_tiems` of 2-Tuple and can be converte to list. 
 The first item of tuple is the key and second one the value.
 
+## Timeformatting
+```python
+import datetime
+from datetime import timedelta
+import pytz
+
+start_date = datetime.datetime(2019,6,1)
+end_date = start_date + timedelta(days=7)
+print(f"{end_date:%Y}-{end_date:%m}-{end_date:%d}")
+```
+
+Time-Formatting, http://strftime.org/
 
 ## Links
   * Pandas, https://pandas.pydata.org/pandas-docs/stable/
+  * Time-Formatting, http://strftime.org/
