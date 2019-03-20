@@ -211,6 +211,15 @@ Multiple List Comprehension Iterators
 
     [ i*j for j in range (10) for i in range(10) ]
 
+```python
+lowercase = 'abcdefghijklmnopqrstuvwxyz'
+digits = '0123456789'
+
+correct_answer = [a+b+c+d for a in lowercase for b in lowercase for c in digits for d in digits]
+correct_answer[:50] 
+# ['aa00', 'aa01', 'aa02', 'aa03', 'aa
+```
+
 ## Links
   * Pandas, https://pandas.pydata.org/pandas-docs/stable/
   * Time-Formatting, http://strftime.org/
