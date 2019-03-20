@@ -1,6 +1,34 @@
 # Pandas
 
 ## DataFrame
+
+### Create from series
+```python
+purchase_1 = pd.Series({'Name': 'Chris',
+                        'Item Purchased': 'Dog Food',
+                        'Cost': 22.50})
+purchase_2 = pd.Series({'Name': 'Kevyn',
+                        'Item Purchased': 'Kitty Litter',
+                        'Cost': 2.50})
+purchase_3 = pd.Series({'Name': 'Vinod',
+                        'Item Purchased': 'Bird Seed',
+                        'Cost': 5.00})
+df = pd.DataFrame([purchase_1, purchase_2, purchase_3], index=['Store 1', 'Store 1', 'Store 2'])
+
+df.head()
+# Cost	Item Purchased	Name
+# Store 1	22.5	Dog Food	Chris
+# Store 1	2.5	Kitty Litter	Kevyn
+# Store 2	5.0	Bird Seed	Vinod
+
+
+df.T.head()
+# Store 1	Store 1	Store 2
+# Cost	22.5	2.5	5
+# Item Purchased	Dog Food	Kitty Litter	Bird Seed
+# Name	Chris	Kevyn	Vinod
+```
+
 ### Manipulate Column
 ```python
 purchase_1 = pd.Series({'Name': 'Chris',
