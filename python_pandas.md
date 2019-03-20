@@ -1,4 +1,6 @@
 # Pandas
+Note: Immutable structure. But some operations (`+= `, inplace-Switch for ops.) allows replacing original structure.
+
 
 ## DataFrame
 
