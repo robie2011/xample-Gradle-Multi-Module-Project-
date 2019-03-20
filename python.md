@@ -175,7 +175,8 @@ Note:
 `dict.items()` returns `dict_tiems` of 2-Tuple and can be converte to list. 
 The first item of tuple is the key and second one the value.
 
-## Timeformatting
+## Date/Time
+### Formatting
 ```python
 import datetime
 from datetime import timedelta
@@ -187,6 +188,23 @@ print(f"{end_date:%Y}-{end_date:%m}-{end_date:%d}")
 ```
 
 Time-Formatting, http://strftime.org/
+
+
+### Parsing
+ISO-8604
+```python
+import dateutil.parser as dp
+t = '1984-06-02T19:05:00.000Z'
+parsed_t = dp.parse(t)
+print(parsed_t)
+# datetime.datetime(1984, 6, 2, 19, 5, tzinfo=tzutc())
+```
+
+Other formats
+```python
+from datetime import datetime
+datetime_object = datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
+```
 
 ## Links
   * Pandas, https://pandas.pydata.org/pandas-docs/stable/
