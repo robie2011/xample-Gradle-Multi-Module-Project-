@@ -38,6 +38,9 @@ plt.title('My first plot',fontsize=20,fontname='Times New Roman')
 # [xmin, xmax, ymin, ymax]
 plt.axis([0,5,0,20])
 
+# rotating x-labels
+plt.tick_params(axis='x', labelrotation=90)
+
 # adding grid
 plt.grid(True)
 
