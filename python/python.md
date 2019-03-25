@@ -1,5 +1,25 @@
 # Python
 
+## Basics
+
+Execute OS commands
+
+`!cat /tmp/1.txt`
+
+
+
+String Types:
+
+* Raw-String: `dirname = r'C:\temp\parts'` (don't use backslash as escape literal)
+* Unicode `u'String'`
+* Binary (Python 3): Convert literal to bytes (?)
+
+https://docs.python.org/2/reference/lexical_analysis.html#string-literals
+
+
+
+
+
 ## Built-in Functions
 
 |                                                              | Built-in Functions                                           |                                                              |                                                              |                                                              |
@@ -149,7 +169,7 @@ python 3.+
 python 3.6+
 
     print(f"{1:02d}")
-  
+
 https://stackoverflow.com/questions/134934/display-number-with-leading-zeros
 
 ## dictionary
@@ -220,6 +240,19 @@ correct_answer[:50]
 # ['aa00', 'aa01', 'aa02', 'aa03', 'aa
 ```
 
+## Packaging
+
+```bash
+# save requirements
+pip freeze > requirements.txt
+
+# installing from requirements
+pip install --no-cache-dir -r requirements.txt
+```
+
+
+
 ## Links
+
   * Pandas, https://pandas.pydata.org/pandas-docs/stable/
   * Time-Formatting, http://strftime.org/
