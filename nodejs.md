@@ -13,3 +13,34 @@ let decodedDoubleValue = new Buffer('...', 'base64').readDoubleBE(0)
 ```
 
   * [Working with JS-Buffer](https://allenkim67.github.io/programming/2016/05/17/nodejs-buffer-tutorial.html)
+  
+  
+## Streams
+  
+```typescript
+import { Writable , Readable } from "stream"
+
+const out = new Writable({
+  write(chunk, encoding, callback){
+    console.log("received: " + chunk.toString())
+    
+    // wait 300sec. before continue stream
+    setTimeout(callback, 300)
+  }
+})
+
+
+let currentCharCode = 65
+const producer = new Readable({
+    read(){
+        this.push(String.fromCharCode(currentCharCode++));
+        if (currentCharCode > 90) {
+          this.push(null);
+        }
+    }
+})
+
+producer.pipe(out)
+```
+
+https://medium.freecodecamp.org/node-js-streams-everything-you-need-to-know-c9141306be93
