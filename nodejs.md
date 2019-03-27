@@ -44,3 +44,8 @@ producer.pipe(out)
 ```
 
 https://medium.freecodecamp.org/node-js-streams-everything-you-need-to-know-c9141306be93
+
+### WARNING
+Do not mix pieping-style and event-style! 
+
+Using certain methods automatically switch to different style. E.g. `.end()`-listener or `.on('data')`-switches to Event style.
