@@ -50,6 +50,16 @@ Do not mix pieping-style and event-style!
 
 Using certain methods automatically switch to different style. E.g. `.end()`-listener or `.on('data')`-switches to Event style.
 
+### Note: Pushing Data
+``` 
+// this result in error (dont know why)
+// probably because of late this-binding
+result.forEach(this.push)
+
+// this works
+result.forEach(x => this.push(x))
+```
+
 
 ## Profiling
 ```typescript
