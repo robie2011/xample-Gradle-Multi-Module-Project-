@@ -82,3 +82,25 @@ setTimeout(() => {
 ```
 
 opening profile: https://github.com/node-inspector/v8-profiler/issues/125#issuecomment-391335260
+
+
+## NPM Publishing
+https://blog.npmjs.org/post/118810260230/building-a-simple-command-line-tool-with-npm
+
+Notes: 
+```
+npm init --scope=@robie2011
+//doing ...
+
+// login once
+npm login
+
+// change version if required
+
+npm version patch
+
+npm publish --access public
+```
+
+Example Project: https://github.com/robie2011/unixtime-cli
+
