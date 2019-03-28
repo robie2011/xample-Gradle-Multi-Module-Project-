@@ -49,3 +49,26 @@ https://medium.freecodecamp.org/node-js-streams-everything-you-need-to-know-c914
 Do not mix pieping-style and event-style! 
 
 Using certain methods automatically switch to different style. E.g. `.end()`-listener or `.on('data')`-switches to Event style.
+
+
+## Profiling
+```typescript
+// yarn add v8-profiler-node8
+import * as profiler from "v8-profiler-node8"
+console.log(profiler)
+const snap1 = profiler.startProfiling()
+
+setTimeout(() => {
+    console.info("stopping")
+    let profile = profiler.stopProfiling()
+
+    profile.export((err, result) => {
+        writeFileSync("profile.cpuprofile", result)
+        profile.delete()
+        process.exit()
+    })
+} , 5000)
+
+```
+
+opening profile: https://github.com/node-inspector/v8-profiler/issues/125#issuecomment-391335260
