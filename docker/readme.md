@@ -74,6 +74,12 @@ Change:
 
     docker update --restart always 3715b6eddaf3
 
+
+## Config
+Get IP
+
+    docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' c
+
 ## Links
   * [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/)
   * [Searching docker certified images](https://https://hub.docker.com/search?operating_system=linux&source=verified&type=image&architecture=amd64)
