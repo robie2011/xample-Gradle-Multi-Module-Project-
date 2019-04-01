@@ -69,6 +69,10 @@ File: `/etc/docker/daemon.json`
 }
 ```
 
+## Restart Policy
+Change:
+
+  docker update --restart always 3715b6eddaf3
 
 ## Links
   * [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/)
