@@ -40,6 +40,36 @@ exec "$@"
 ```
 
 
+## Truncate Logs
+```
+# finding logs
+du -d1 -h /var/lib/docker/containers | sort -h
+
+# truncating 1
+truncate -s 0 /var/lib/docker/containers/[ContainerId]/[ContainerId]-json.log
+
+# truncating 2
+cat /dev/null > /var/lib/docker/containers/container_id/container_log_name
+```
+https://medium.freecodecamp.org/how-to-setup-log-rotation-for-a-docker-container-a508093912b2
+
+https://success.docker.com/article/no-space-left-on-device-error
+
+## Setup Log Retention
+
+File: `/etc/docker/daemon.json`
+
+```json
+{
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "10m",
+    "max-file": "10"
+  }
+}
+```
+
+
 ## Links
   * [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/)
   * [Searching docker certified images](https://https://hub.docker.com/search?operating_system=linux&source=verified&type=image&architecture=amd64)
