@@ -33,6 +33,18 @@ networks:
     external: true
 ```
 
+## Environment Variable
+
+```yml
+    environment:
+      - JUDA_MONGODB=${DB_PROD}
+      - JUDA_PROXY_URLS=http://www.christsquare.com
+```
+
+  * No space on left or right side of `=`
+  * No `"` for value
+  * Attach container and examine real env. setup
+
 ## Configurations
 
 ### Network
