@@ -2,6 +2,6 @@
 
 ## Admin
 
-show measurement structure
+show fields and key structure
 
-    show field keys from ticks
+    SHOW FIELD KEYS [ON <database_name>] [FROM <measurement_name>]
