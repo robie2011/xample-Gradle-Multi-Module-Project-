@@ -256,3 +256,4 @@ pip install --no-cache-dir -r requirements.txt
 
   * Pandas, https://pandas.pydata.org/pandas-docs/stable/
   * Time-Formatting, http://strftime.org/
+  * static typing with `mypy` and python 3.5+, https://www.youtube.com/watch?v=2xWhaALHTvU
