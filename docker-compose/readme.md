@@ -58,7 +58,7 @@ services:
     volumes:
       - grafana-storage2:/var/lib/grafana
     environment:
-      - GF_SERVER_ROOT_URL=http://grafana.ketag.io
+      - GF_SERVER_ROOT_URL=http://example.servers.io
       - GF_SECURITY_ADMIN_PASSWORD=secret
 
 
