@@ -45,6 +45,28 @@ networks:
   * No `"` for value
   * Attach container and examine real env. setup
 
+## External Volume
+
+```yml
+version: '3'
+services:
+  grafana:
+    image: grafana/grafana:6.1.3
+    container_name: grafana2
+    ports: 
+      - "3000:3000"
+    volumes:
+      - grafana-storage2:/var/lib/grafana
+    environment:
+      - GF_SERVER_ROOT_URL=http://grafana.ketag.io
+      - GF_SECURITY_ADMIN_PASSWORD=secret
+
+
+
+volumes:
+  grafana-storage2:
+```
+
 ## Configurations
 
 ### Network
