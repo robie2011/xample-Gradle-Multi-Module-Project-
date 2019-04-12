@@ -54,4 +54,4 @@ networks:
 
 ## Links
   * [Reference](https://docs.docker.com/compose/compose-file)
-  * [Managing multiple containers with compose](https://stackoverflow.com/questions/54114045/how-to-implement-changes-made-to-docker-compose-yml-to-detached-running-containe)
+  * [Managing multiple containers with compose](https://stackoverflow.com/a/54114373/2248405)
