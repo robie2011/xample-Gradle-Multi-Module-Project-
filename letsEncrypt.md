@@ -4,16 +4,52 @@
   * [Available Plugins](https://certbot.eff.org/docs/using.html#getting-certificates-and-choosing-plugins)
   * Easy way: Using integrated webserver or webroot (not tested)
 
-```bash
-domaine_name=your.domain.name
-docker run -it --rm --name certbot -p 80:80 \
-    -v "/etc/letsencrypt:/etc/letsencrypt" \
-    -v "/var/lib/letsencrypt:/var/lib/letsencrypt" \
-    certbot/certbot \
-    certonly --preferred-challenges http --standalone \
-        -d $domaine_name 
+### Container Setup
+```yml
+version: '3'
+services:
+  certbot:
+    image: certbot/certbot
+    hostname: certbot
+    container_name: certbot
+    volumes:
+      - cert_log:/var/log/letsencrypt/
+      - cert_data:/var/lib/letsencrypt/
+      - cert_config:/etc/letsencrypt/
+    ports:
+      - "80:80"
+
+volumes:
+  cert_log:
+    external: true
+  cert_data:
+    external: true
+  cert_config:
+    external: true
 ```
 
+```bash
+docker volume create cert_log
+docker volume create cert_config
+docker volume create cert_data
+```
+
+### Create Certificate with Docker
+```bash
+DOMAIN=example.mydomain.ch
+EMAIL=mymail@mydomain.com
+CERT_SERVER=https://acme-v02.api.letsencrypt.org/directory
+docker-compose run --service-ports --rm certbot certonly --agree-tos --no-eff-email --standalone --server $CERT_SERVER --preferred-challenges http --email $EMAIL -d $DOMAIN
+```
+
+### Renew Certificate with Docker
+
+**UNTESTED**
+
+```bash
+CERT_SERVER=https://acme-v02.api.letsencrypt.org/directory
+docker-compose run --service-ports --rm certbot renew --standalone --server $CERT_SERVER --preferred-challenges http
+```
 
 ## Getting Certificate for wildcard-domain
 

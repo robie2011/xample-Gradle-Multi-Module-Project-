@@ -37,3 +37,17 @@ Tape Archive
 .Example 2: lisT content: Compress Verbose Filename
     tar -tvf packagename.tar /folder1 /folder2
 
+
+
+== Logs
+
+dmsg
+
+/var/log/syslog
+
+== apt source
+
+Generate from https://debgen.simplylinux.ch/
+
+
+    /etc/apt/sources.list

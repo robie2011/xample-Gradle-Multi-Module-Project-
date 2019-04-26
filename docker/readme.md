@@ -70,6 +70,8 @@ File: `/etc/docker/daemon.json`
 ```
 
 ## Restart Policy
+Policies: "no", always, on-failure, unless-stopped
+
 Change:
 
     docker update --restart always 3715b6eddaf3

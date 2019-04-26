@@ -75,3 +75,29 @@ EOF
 
 # execute script and redirect output to file
 ```
+
+
+
+## Archiving
+
+excluding folders
+
+```bash
+tar --exclude='./influx' --exclude='./protofluxtt/protofluxtt' -zcvf /tmp/docker_config.tgz .
+```
+
+
+
+### Archiving and keeping path to directories
+
+```bash
+cd /
+
+tar --exclude='/docker_data/influx' \
+	--exclude='/docker_data/protofluxtt/protofluxtt' \
+	-zcvf /tmp/docker_config.tgz \
+	/docker_data/ \
+	/etc/letsencrypt/ \
+	/var/lib/letsencrypt/
+```
+

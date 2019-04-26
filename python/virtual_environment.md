@@ -10,6 +10,8 @@ https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virt
 ## Create
 
     python3 -m venv /path/to/new/virtual/environment
+    
+    python3 -m venv venv
 
 ## Activate
 
@@ -24,4 +26,4 @@ https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virt
 ## Install
 
     pip install -r requirements.txt
-    
+
