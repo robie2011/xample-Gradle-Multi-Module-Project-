@@ -231,6 +231,12 @@ Multiple List Comprehension Iterators
 
     [ i*j for j in range (10) for i in range(10) ]
 
+example 2:
+
+    config = [ (x, os.getenv(x))
+               for x in os.environ
+               if (x.startswith("MQTT_") or x.startswith("KAFKA_")) ]
+
 ```python
 lowercase = 'abcdefghijklmnopqrstuvwxyz'
 digits = '0123456789'
