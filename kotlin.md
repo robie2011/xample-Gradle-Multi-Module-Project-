@@ -88,6 +88,20 @@ fun invokeLambda(lambda: (Double) -> Boolean) : Boolean {
 }
 ```
 
+### Functional Interface Lambda Implementation
+
+```kotlin
+var myRunnable1 = object: Runnable {
+    override fun run() {
+        TODO("not implemented")
+    }
+}
+
+var myRunnable2 = Runnable {
+    TODO("not implemented")
+}
+```
+
 ## DateTime
 ### Basics
 There are (https://www.oracle.com/technetwork/articles/java/jf14-date-time-2125367.html)
