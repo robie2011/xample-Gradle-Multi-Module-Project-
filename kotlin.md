@@ -143,6 +143,9 @@ val executionTimeMs = measureTimeMillis {
 println("Execution Time: " + DurationFormatUtils.formatDuration(executionTimeMs, "HH:mm:ss,SSS"))
 ```
 
+## Supporting Function Selection
+![Function Selection](https://cdn-images-1.medium.com/max/800/1*pLNnrvgvmG6Mdi0Yw3mdPQ.png)
+
 ### Links
   * https://www.baeldung.com/kotlin-lambda-expressions
   * [Higher-Order Functions and Lambda](https://kotlinlang.org/docs/reference/lambdas.html)
