@@ -145,3 +145,5 @@ println("Execution Time: " + DurationFormatUtils.formatDuration(executionTimeMs,
 
 ### Links
   * https://www.baeldung.com/kotlin-lambda-expressions
+  * [Higher-Order Functions and Lambda](https://kotlinlang.org/docs/reference/lambdas.html)
+  * [Mastering Kotlin standard functions: run, with, let, also and apply](https://medium.com/@elye.project/mastering-kotlin-standard-functions-run-with-let-also-and-apply-9cd334b0ef84)
