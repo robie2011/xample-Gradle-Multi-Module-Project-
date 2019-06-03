@@ -9,6 +9,9 @@ Command on multiple lines
            --without-http_empty_gif_module  --with-openssl=/lib64
 ```
 
+## Stop on error
+`set -e
+
 ### Moving
 
 ```bash
