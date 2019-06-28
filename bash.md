@@ -105,4 +105,6 @@ tar --exclude='/docker_data/influx' \
 ```
 
 ### Upload to owncloud
-curl -O 'https://gist.githubusercontent.com/tavinus/93bdbc051728748787dc22a58dfe58d8/raw/cloudsend.sh' && chmod +x cloudsend.sh
+https://help.nextcloud.com/t/upload-to-file-drop-using-curl-from-command-line/11893/7
+
+	curl -O 'https://gist.githubusercontent.com/tavinus/93bdbc051728748787dc22a58dfe58d8/raw/cloudsend.sh' && chmod +x cloudsend.sh
