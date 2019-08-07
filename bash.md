@@ -108,3 +108,8 @@ tar --exclude='/docker_data/influx' \
 https://help.nextcloud.com/t/upload-to-file-drop-using-curl-from-command-line/11893/7
 
 	curl -O 'https://gist.githubusercontent.com/tavinus/93bdbc051728748787dc22a58dfe58d8/raw/cloudsend.sh' && chmod +x cloudsend.sh
+
+
+## List all cronjobs from all users
+
+	for x in $(less /etc/passwd | cut -d':' -f1); do echo "";echo "$x: ---->"; crontab -l -u $x 2>/dev/null | grep -E -v "#"; done
