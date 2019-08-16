@@ -127,3 +127,5 @@ ax.xaxis.set_major_formatter(timeFmt)
 ax.xaxis.set_minor_locator(days)
 ```
 
+## Texture for bars
+https://www.w3resource.com/graphics/matplotlib/barchart/matplotlib-barchart-exercise-17.php
