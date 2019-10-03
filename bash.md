@@ -113,3 +113,14 @@ https://help.nextcloud.com/t/upload-to-file-drop-using-curl-from-command-line/11
 ## List all cronjobs from all users
 
 	for x in $(less /etc/passwd | cut -d':' -f1); do echo "";echo "$x: ---->"; crontab -l -u $x 2>/dev/null | grep -E -v "#"; done
+
+## Iterate line by line and split line into array
+
+```bash
+cat d1.csv | while read line;
+do
+  IFS=',' read -ra arr <<< $line
+  echo "${arr[0]}"
+done
+
+```
