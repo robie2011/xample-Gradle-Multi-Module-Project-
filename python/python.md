@@ -256,7 +256,10 @@ pip freeze > requirements.txt
 pip install --no-cache-dir -r requirements.txt
 ```
 
-
+## Path
+``python
+os.path.join(PATH_PACKAGE, identifier, NAME_PIPELINE_FILE)
+``
 
 ## Links
 
