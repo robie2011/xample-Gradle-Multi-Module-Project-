@@ -57,3 +57,11 @@ Generate from https://debgen.simplylinux.ch/
 Man Search
 
 https://superuser.com/questions/253093/searching-for-a-specific-option-in-a-man-page#targetText=But%20if%20you%20don't,the%20start%20of%20the%20line.
+
+## Network
+
+### Hostname
+
+Get
+
+  hostname -I
