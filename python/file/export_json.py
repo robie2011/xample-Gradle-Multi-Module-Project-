@@ -1,4 +1,5 @@
-import json 
+import json
+import os
 
 def write_column_file_json(directory, db, table, result):
     parent_dir = f'{directory}/{db}'
