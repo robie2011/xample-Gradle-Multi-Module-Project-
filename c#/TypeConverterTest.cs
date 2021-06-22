@@ -4,7 +4,7 @@ using System.Globalization;
 using Xunit;
 
 // Doc: https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.typeconverter?view=net-5.0
-namespace Messerli.NakaOne.App.Shared.Test
+namespace TypeConverterExample
 {
     public sealed class TypeConverterTest
     {
