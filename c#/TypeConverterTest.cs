@@ -4,29 +4,39 @@ using System.Globalization;
 using Xunit;
 
 // Doc: https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.typeconverter?view=net-5.0
-namespace TypeConverterExample
+namespace Examples
 {
     public sealed class TypeConverterTest
     {
         [Fact]
-        public void CanConvert()
+        public void Convert()
         {
-            var value = (Hello)TypeDescriptor
-                .GetConverter(typeof(Hello))
-                .ConvertFrom("23")!;
+            // No attribute assigned. This returns default converter
+            var converter0 = TypeDescriptor.GetConverter(typeof(TypeWithoutAttribute));
+            Assert.Equal(typeof(TypeConverter), converter0.GetType());
 
+            // Adding attribute programmatically
+            TypeDescriptor.AddAttributes(
+                typeof(TypeWithoutAttribute),
+                new TypeConverterAttribute(typeof(StringToIntTypeConverter)));
+
+            // Should return assigned converter
+            var converter1 = TypeDescriptor.GetConverter(typeof(TypeWithoutAttribute));
+            Assert.Equal(typeof(StringToIntTypeConverter), converter1.GetType());
+            
+            // Should convert correctly
+            var value = (TypeWithoutAttribute)converter1.ConvertFrom("23")!;
             Assert.Equal(23, value.Number);
         }
 
-        [TypeConverter(typeof(HelloTypeConverter))]
-        internal class Hello
+        internal class TypeWithoutAttribute
         {
-            public Hello(int number)
+            public TypeWithoutAttribute(int number)
             {
                 Number = number;
             }
 
-            private Hello()
+            private TypeWithoutAttribute()
             {
                 Number = -1;
             }
@@ -34,7 +44,7 @@ namespace TypeConverterExample
             public int Number { get; }
         }
 
-        internal class HelloTypeConverter : TypeConverter
+        internal class StringToIntTypeConverter : TypeConverter
         {
             public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
             {
@@ -50,7 +60,7 @@ namespace TypeConverterExample
             {
                 if (value is string strValue && !string.IsNullOrWhiteSpace(strValue))
                 {
-                    return new Hello(int.Parse(strValue));
+                    return new TypeWithoutAttribute(int.Parse(strValue));
                 }
 
                 return base.ConvertFrom(context, culture, value);
