@@ -11,3 +11,18 @@
      return New-Object psobject -Property $props
 }
 ```
+
+
+# Fix: Terminate files with Newline
+
+[SA1518](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1518.md) Fix
+
+```powershell
+
+gci -recurse -Filter *.cs | % {
+  $content = gc -raw $_
+  if($content[-1] -eq "}") {
+    $content + "`n" | out-file -NoNewline $_ 
+  } 
+ }
+```
