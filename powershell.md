@@ -21,7 +21,7 @@
 
 gci -recurse -Filter *.cs | % {
   $content = gc -raw $_
-  if($content[-1] -eq "}") {
+  if($content[-1] -ne "}") {
     $content + "`n" | out-file -NoNewline $_ 
   } 
  }
